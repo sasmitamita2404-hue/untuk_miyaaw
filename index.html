@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Gift for Mintul</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+
+    <!-- SLIDE 1: WELCOME -->
+    <section class="slide active" id="welcome">
+        <p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
+        <h1>A SPECIAL<br>GIFT FOR YOU</h1>
+        <p class="flower-mark">✳</p>
+        <button onclick="enterGarden()">ENTER FLOWER GARDEN ↗</button>
+    </section>
+
+    <!-- SLIDE 2: FLOWER TRANSITION -->
+    <section class="slide" id="transition">
+        <p class="eyebrow" id="waitText">Wait a second...</p>
+        <h2 id="someoneText">SOMEONE MADE THIS FOR YOU</h2>
+        <div id="flowers"></div>
+    </section>
+
+    <!-- SLIDE 3: BIRTHDAY -->
+    <section class="slide" id="birthday">
+        <p class="eyebrow">IT'S YOUR BIG DAY</p>
+        <h1>HAPPY<br>BIRTHDAY</h1>
+        <p class="name-title">TAMIYATUL BARIYAH</p>
+        <button onclick="showSlide('memories')">CONTINUE ↓</button>
+    </section>
+
+    <!-- SLIDE 4: PHOTO GALLERY -->
+    <section class="slide" id="memories">
+        <p class="eyebrow">A LITTLE COLLECTION OF MOMENTS</p>
+        <h2>flower memories</h2>
+        <p class="subtitle">little moments, beautiful memories.</p>
+
+        <div class="photo-gallery">
+            <button class="photo-card" onclick="openPhoto(0)">
+                <img src="1.jpeg" alt="Memory one">
+            </button>
+            <button class="photo-card" onclick="openPhoto(1)">
+                <img src="3.jpeg" alt="Memory two">
+            </button>
+            <button class="photo-card" onclick="openPhoto(2)">
+                <img src="2.jpeg" alt="Memory three">
+            </button>
+        </div>
+
+        <p class="tiny-note">tap a photo to see it closer</p>
+        <button onclick="showSlide('note')">READ FLOWER NOTE ↗</button>
+        <button class="text-button" onclick="showSlide('birthday')">← BACK</button>
+    </section>
+
+    <!-- PHOTO VIEWER -->
+    <section class="slide" id="photoViewer">
+        <p class="eyebrow">A MOMENT TO REMEMBER</p>
+        <img id="largePhoto" class="large-photo" src="" alt="Selected memory">
+        <div class="button-row">
+            <button onclick="changePhoto(-1)">← PREVIOUS</button>
+            <button onclick="changePhoto(1)">NEXT →</button>
+        </div>
+        <button class="text-button" onclick="showSlide('memories')">BACK TO PHOTOS</button>
+    </section>
+
+    <!-- SLIDE 5: LETTER -->
+    <section class="slide" id="note">
+        <p class="eyebrow">A NOTE FOR YOU</p>
+        <div class="letter">
+            <p class="letter-label">dear miyaww,</p>
+            <h2>a little flower note</h2>
+
+            <p class="letter-message">
+                happy birthday, miyaww.
+                <br><br>
+                happy birthday my favorite girls, my emergency contact💗
+tumbuh lebih baik yaaa, semoga hal baik selalu berpihak kepadamu, semoga jalanmu selalu dipermudahkan, teruslah melangkah dan berbahagialah, terimakasih sudah menjadi tempat berbagi keluh kesahku hidup lebih lama yaaa, dan tetap jadi keluraga terbaikku
+                <br><br>
+                thank you for being you.
+                you deserve beautiful things.
+            </p>
+
+            <p class="letter-sign">jangann lupainn ayuu yaww, ♡</p>
+        </div>
+
+        <button onclick="showSlide('memories')">← BACK TO PHOTOS</button>
+        <button onclick="showSlide('surprise')">FINAL SURPRISE ↗</button>
+    </section>
+
+    <!-- SLIDE 6: FINAL SURPRISE -->
+    <section class="slide" id="surprise">
+        <p class="eyebrow">ONE LAST LITTLE THING</p>
+        <h2>make a wish</h2>
+        <p class="subtitle">close your eyes and wish for something beautiful.</p>
+
+        <div class="cake-scene">
+            <div class="candles">
+                <div class="candle">
+                    <span class="flame"></span>
+                </div>
+                <div class="candle">
+                    <span class="flame"></span>
+                </div>
+                <div class="candle">
+                    <span class="flame"></span>
+                </div>
+            </div>
+            <div class="cake-top"></div>
+            <div class="cake-body"></div>
+            <div class="cake-plate"></div>
+        </div>
+
+        <button id="wishButton" onclick="makeWish()">MAKE A WISH ✳</button>
+        <p id="wishMessage" class="wish-message"></p>
+        <button class="text-button" onclick="showSlide('memories')">BACK TO PHOTOS</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
